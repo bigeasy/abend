@@ -1,0 +1,32 @@
+{
+    "name":             "abend",
+    "version":          "9.9.9",
+    "author":           "Alan Gutierrez <alan@prettyrobots.com>",
+    "description":      "Throw an error if there is an error.",
+    "keywords":
+    [
+                        "http", "https", "rest", "json", "curl"
+    ],
+    "main":             "abend",
+    "contributors":     [],
+    "homepage":         "https://github.com/bigeasy/abend",
+    "bugs":             "https://github.com/bigeasy/abend/issues",
+    "license":          "MIT",
+    "main":             "abend",
+    "repository":
+    {
+                        "type": "git",
+                        "url": "http://github.com/bigeasy/abend.git"
+    },
+    "dependencies":
+    {
+    },
+    "devDependencies":
+    {
+                        "proof":                "0.0.52"
+    },
+    "scripts":
+    {
+                        "test": "proof platform win32 && proof test */*/*.t.js || t/test"
+    }
+}

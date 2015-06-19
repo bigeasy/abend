@@ -1,0 +1,7 @@
+1434682901273 run  t/abend/abend.t.js
+1434682901327 plan t/abend/abend.t.js 1
+1434682901329 test t/abend/abend.t.js ok 1 caught
+1434682901329 out  t/abend/abend.t.js # expected 1
+1434682901329 out  t/abend/abend.t.js # passed   1
+1434682901333 exit t/abend/abend.t.js 0 null
+1434682901333 eof  *
