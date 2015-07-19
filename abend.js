@@ -1,4 +1,2 @@
-function abend (error) {
-    if (error) throw error
-}
-module.exports = abend
+var internal = require('./internal')
+module.exports = internal.checkError(internal.createThrower)
