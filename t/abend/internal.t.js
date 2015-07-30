@@ -10,8 +10,10 @@ function prove (assert, callback) {
     }
 
     var handler = internal.checkError(function (error) {
-        assert(error.message, 'given', 'abended')
-        callback()
+        return function () {
+            assert(error.message, 'given', 'abended')
+            callback()
+        }
     })
 
     handler()
