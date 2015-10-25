@@ -1,11 +1,14 @@
-require('proof')(2, prove)
+require('proof')(3, prove)
 
 function prove (assert, callback) {
     var internal = require('../../internal')
+    var stream = require('stream')
+    var stderr = new stream.PassThrough
 
     try {
-        internal.createThrower(new Error('thrown'))()
+        internal.createThrower(new Error('thrown'), stderr)()
     } catch (error) {
+        assert(stderr.read().toString(), 'WARNING: rethrowning caught error\n', 'stderr')
         assert(error.message, 'thrown', 'thrower')
     }
 
@@ -14,8 +17,12 @@ function prove (assert, callback) {
             assert(error.message, 'given', 'abended')
             callback()
         }
-    })
+    }, stderr)
 
     handler()
-    handler(new Error('given'))
+    try {
+        handler(new Error('given'))
+    } catch (error) {
+        // swallow error to test hedge.
+    }
 }
