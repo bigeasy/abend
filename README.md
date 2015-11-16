@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/bigeasy/abend.svg?branch=master)](https://travis-ci.org/bigeasy/abend) [![Coverage Status](https://coveralls.io/repos/bigeasy/abend/badge.svg?branch=master&service=github)](https://coveralls.io/github/bigeasy/abend?branch=master)
 
-Abend: For when there's nothing better to do than panic.
+For when there's nothing better to do than panic.
 
 ```
 function abend (error) {
@@ -18,9 +18,18 @@ turn them into error events.
 Abend is part of the [Cadence](https://github.com/bigeasy/cadence) Universe.
 
 I use Abend to terminate the asynchronous stacks I create with Cadence. Cadence
-has robust asynchronous try/catch error handling. Every program that is built
-around error-first callbacks has that one final callback that can't do anything
-with the error. If that error is thrown it should not be caught.
+has robust asynchronous try/catch error handling.
+
+Every program that is built around error-first callbacks has that one final
+callback that can't do anything with the error. If that error is thrown it
+should not be caught.
+
+If you are using Cadence, it won't be caught, because Cadence uses a trampoline
+to invoke its user-specifed program logic. It bounces user functions on the
+trampoline, then it calls it's callback directly. There is no try/catch block
+enveloping the callback.
+
+If you use Callback, and you through an exception, it will do the right thing.
 
 However, we're all trying to figure out this single threaded callback oriented
 environment, so when using other libraries you're often using an ad-hoc
@@ -37,3 +46,5 @@ exceptins, but never handles exceptions that where not meant for it.
 
 That's why this library exists. I use it in every significant project. It is the
 end of the line for all my Node.js programs.
+
+*Ed: Added copy that is not as good as the copy that is already here.*
