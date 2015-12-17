@@ -12,8 +12,7 @@ function abend (error) {
 ```
 
 Abend's promise: I will unwind your stack and crash your program if it's the
-last thing I do. It defeats any and all naive attempts to catch exceptions and
-turn them into error events.
+last thing I do. It defeats any and all naive attempts to catch exceptions.
 
 Abend is part of the [Cadence](https://github.com/bigeasy/cadence) Universe.
 
@@ -25,7 +24,7 @@ callback that can't do anything with the error. If that error is thrown it
 should not be caught.
 
 If you are using Cadence, it won't be caught, because Cadence uses a trampoline
-to invoke its user-specifed program logic. It bounces user functions on the
+to invoke its user-specified program logic. It bounces user functions on the
 trampoline, then it calls it's callback directly. There is no try/catch block
 enveloping the callback.
 
