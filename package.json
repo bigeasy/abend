@@ -1,6 +1,6 @@
 {
     "name":             "abend",
-    "version":          "1.0.0",
+    "version":          "1.0.1",
     "author":           "Alan Gutierrez <alan@prettyrobots.com>",
     "description":      "Throw an error if there is an error.",
     "keywords":
