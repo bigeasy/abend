@@ -1,5 +1,5 @@
 require('proof/redux')(1, prove)
 
 function prove (assert) {
-    assert(require('../..'), 'require')
+    assert(require('..'), 'require')
 }

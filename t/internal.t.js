@@ -1,7 +1,7 @@
 require('proof/redux')(3, prove)
 
 function prove (assert, callback) {
-    var internal = require('../../internal')
+    var internal = require('../internal')
     var stream = require('stream')
     var stderr = new stream.PassThrough
 
