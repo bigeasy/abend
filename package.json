@@ -7,7 +7,7 @@
 
     "keywords":
     [
-                            "http", "https", "rest", "json", "curl"
+                            "error-first", "exit", "error", "raise"
     ],
     "author":               "Alan Gutierrez <alan@prettyrobots.com>",
     "homepage":             "https://github.com/bigeasy/abend",
