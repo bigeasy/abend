@@ -1,6 +1,6 @@
 {
     "name":                 "abend",
-    "version":              "1.0.4",
+    "version":              "1.0.5",
     "description":
 
       "Throw an error if there is an error.",
