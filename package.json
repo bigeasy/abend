@@ -16,7 +16,7 @@
     "repository":
     {
                             "type": "git",
-                            "url": "http://github.com/bigeasy/abend.git"
+                            "url": "bigeasy/abend"
     },
     "dependencies":
     {
