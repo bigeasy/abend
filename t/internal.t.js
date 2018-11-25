@@ -1,6 +1,6 @@
 require('proof')(3, prove)
 
-function prove (assert, callback) {
+function prove (okay, callback) {
     var internal = require('../internal')
     var stream = require('stream')
     var stderr = new stream.PassThrough
@@ -8,13 +8,13 @@ function prove (assert, callback) {
     try {
         internal.createThrower(new Error('thrown'), stderr)()
     } catch (error) {
-        assert(stderr.read().toString(), 'WARNING: rethrowning caught error\n', 'stderr')
-        assert(error.message, 'thrown', 'thrower')
+        okay(stderr.read().toString(), 'WARNING: rethrowning caught error\n', 'stderr')
+        okay(error.message, 'thrown', 'thrower')
     }
 
     var handler = internal.checkError(function (error) {
         return function () {
-            assert(error.message, 'given', 'abended')
+            okay(error.message, 'given', 'abended')
             callback()
         }
     }, stderr)
